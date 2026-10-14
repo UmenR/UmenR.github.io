@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Umendra Rajapakshe</title><link rel="stylesheet" href="/_astro/Terminal.BENspTD4.css"></head><body><div class="terminal-window fade-in"><div class="terminal-titlebar"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div><span class="terminal-title">visitor@portfolio: ~/blog/containerization-with-docker</span></div><div class="terminal-body"><nav class="nav-bar"><a href="/" class="nav-link">about</a><a href="/blog" class="nav-link active">blog</a></nav><a href="/blog" class="back-link">&larr; back to blog</a><div class="term-output" style="margin-bottom: 1rem;"><div class="term-line"><span class="term-prompt"><span class="user">visitor</span><span class="at">@</span><span class="host">portfolio</span><span class="symbol">:~/blog$</span></span> cat containerization-with-docker.md</div></div><article class="fade-in"><div class="article-header"><h1>Containerization with Docker: A Practical Guide</h1><div class="article-meta"><span>July 10, 2025</span><div class="post-tags"><span class="tag">docker</span><span class="tag">devops</span><span class="tag">tutorial</span></div></div></div><div class="article-body"><h1 id="containerization-with-docker-a-practical-guide">Containerization with Docker: A Practical Guide</h1>
+<p>“It works on my machine” is the oldest joke in software engineering. Docker makes it not funny anymore — because it stops being true.</p>
+<h2 id="what-is-docker">What is Docker?</h2>
+<p>Docker packages your application and its dependencies into a single, portable container. That container runs identically on your laptop, your CI server, and your production host.</p>
+<h2 id="writing-your-first-dockerfile">Writing Your First Dockerfile</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dockerfile"><code><span class="line"><span style="color:#F97583">FROM</span><span style="color:#E1E4E8"> node:20-alpine</span></span>
+<span class="line"><span style="color:#F97583">WORKDIR</span><span style="color:#E1E4E8"> /app</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> package.json ./</span></span>
+<span class="line"><span style="color:#F97583">RUN</span><span style="color:#E1E4E8"> npm install</span></span>
+<span class="line"><span style="color:#F97583">COPY</span><span style="color:#E1E4E8"> . .</span></span>
+<span class="line"><span style="color:#F97583">CMD</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"node"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"index.js"</span><span style="color:#E1E4E8">]</span></span></code></pre>
+<h2 id="docker-compose">Docker Compose</h2>
+<p>For multi-container setups, Docker Compose is the tool. Define your app, database, and cache in a single <code>docker-compose.yml</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">services</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">  web</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    build</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">.</span></span>
+<span class="line"><span style="color:#85E89D">    ports</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">      - </span><span style="color:#9ECBFF">"3000:3000"</span></span>
+<span class="line"><span style="color:#85E89D">  db</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">    image</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">postgres:16</span></span>
+<span class="line"><span style="color:#85E89D">    environment</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#85E89D">      POSTGRES_PASSWORD</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">secret</span></span></code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li>Keep images small — use Alpine bases.</li>
+<li>Layer your Dockerfile cache-friendly: copy <code>package.json</code> before source code.</li>
+<li>Use multi-stage builds to strip build tools from the final image.</li>
+<li>Never run as root inside a container.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Docker is not magic, but it feels like it. Once you containerize your workflow, you wonder how you ever lived without it.</p>
+</div></article><hr><a href="/blog" class="back-link">&larr; back to all posts</a></div><div class="status-line"><div class="status-left"><span class="status-mode">NORMAL</span><span>UTF-8</span><span>portfolio v1.0</span></div><div class="status-right"><span>2026</span></div></div></div></body></html>

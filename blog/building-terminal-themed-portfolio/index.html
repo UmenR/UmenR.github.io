@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Umendra Rajapakshe</title><link rel="stylesheet" href="/_astro/Terminal.BENspTD4.css"></head><body><div class="terminal-window fade-in"><div class="terminal-titlebar"><div class="terminal-dot red"></div><div class="terminal-dot yellow"></div><div class="terminal-dot green"></div><span class="terminal-title">visitor@portfolio: ~/blog/building-terminal-themed-portfolio</span></div><div class="terminal-body"><nav class="nav-bar"><a href="/" class="nav-link">about</a><a href="/blog" class="nav-link active">blog</a></nav><a href="/blog" class="back-link">&larr; back to blog</a><div class="term-output" style="margin-bottom: 1rem;"><div class="term-line"><span class="term-prompt"><span class="user">visitor</span><span class="at">@</span><span class="host">portfolio</span><span class="symbol">:~/blog$</span></span> cat building-terminal-themed-portfolio.md</div></div><article class="fade-in"><div class="article-header"><h1>Building a Terminal-Themed Portfolio</h1><div class="article-meta"><span>September 15, 2025</span><div class="post-tags"><span class="tag">web-dev</span><span class="tag">design</span><span class="tag">terminal</span></div></div></div><div class="article-body"><h1 id="building-a-terminal-themed-portfolio">Building a Terminal-Themed Portfolio</h1>
+<p>When I set out to build this site, I wanted something that felt like firing up an old Unix terminal — green phosphor glow, blinking cursor, ASCII art banners, and that satisfying typewriter feel.</p>
+<h2 id="the-stack">The Stack</h2>
+<ul>
+<li><strong>Vite</strong> for fast bundling and HMR</li>
+<li><strong>Vanilla JS</strong> for routing and DOM manipulation</li>
+<li><strong>Supabase</strong> for blog post storage</li>
+<li><strong>CSS</strong> for the terminal aesthetic</li>
+</ul>
+<h2 id="ascii-art">ASCII Art</h2>
+<p>The header banner uses figlet-style ASCII art rendered in a <code>&lt;pre&gt;</code> block:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>  ____  _               _</span></span>
+<span class="line"><span> |  _ \(_)___  ___  __ _| |</span></span>
+<span class="line"><span> | | | | / __|/ _ \/ _` | |</span></span>
+<span class="line"><span> | |_| | \__ \  __/ (_| | |</span></span>
+<span class="line"><span> |____/|_|___/\___|\__,_|_|</span></span></code></pre>
+<h2 id="custom-cursor">Custom Cursor</h2>
+<p>The cursor is a blinking block element that follows the mouse. On hover over links it expands and changes color.</p>
+<h2 id="why-vanilla-js">Why Vanilla JS?</h2>
+<p>No framework overhead. The site is small enough that a hash-based router and a few render functions do the job perfectly. Less code, faster load, easier to maintain.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The terminal aesthetic is a love letter to computing history. It is minimalist, fast, and unmistakably personal.</p>
+</div></article><hr><a href="/blog" class="back-link">&larr; back to all posts</a></div><div class="status-line"><div class="status-left"><span class="status-mode">NORMAL</span><span>UTF-8</span><span>portfolio v1.0</span></div><div class="status-right"><span>2026</span></div></div></div></body></html>
